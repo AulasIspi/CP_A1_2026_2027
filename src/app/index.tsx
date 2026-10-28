@@ -1,3 +1,4 @@
+import { MaterialIcons } from '@react-native-vector-icons/material-icons';
 import {
   FlatList,
   StyleSheet,
@@ -22,9 +23,12 @@ export default function ContactPage(){
 
      <View style={estilos.formContainer}>
       <TextInput style={estilos.input}/>
+      <TouchableOpacity style={estilos.searchButton}>
+        <MaterialIcons name="search" size={24} color="#fafafa" />
+      </TouchableOpacity>
      </View>
 
-    <View style={{flex: 1, marginTop: 12}}>
+    <View style={{flex: 1, marginTop: 12, position: 'relative'}}>
 
   <FlatList
       style={{flex: 1 }}
@@ -42,7 +46,16 @@ export default function ContactPage(){
             </TouchableOpacity>
         }
       />
+
+   <TouchableOpacity 
+style={estilos.plusButton}>
+        <MaterialIcons name="add" size={30} color="#fafafa" />
+       </TouchableOpacity>
+
+       
     </View>
+
+
     </View>
   );
 }
@@ -50,7 +63,8 @@ export default function ContactPage(){
 const estilos = StyleSheet.create({
  container : {
   flex: 1,
-  paddingHorizontal: 12
+  paddingHorizontal: 12,
+  position: 'relative',
  },
  header: {
   paddingVertical: 14,
@@ -69,7 +83,8 @@ const estilos = StyleSheet.create({
    width: '100%',
    height: 40,
    borderRadius: 16,
-   overflow: 'hidden'
+   overflow: 'hidden',
+   position: 'relative',
  },
  input :{
   width: '100%',
@@ -100,5 +115,21 @@ const estilos = StyleSheet.create({
   overflow: 'hidden',
   justifyContent:'center',
   alignItems:'center'
- }
+ },
+ searchButton:{
+  position:'absolute',
+  left: 12,
+  top: 8,
+ },
+ plusButton:{
+   backgroundColor: '#706a6a',
+   position: 'absolute',
+   right: 12,
+   bottom: 12,
+   height: 60,
+   width: 60,
+   borderRadius: 30,
+   justifyContent:'center',
+   alignItems:'center'
+            }
 });
