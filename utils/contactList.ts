@@ -4,7 +4,7 @@ interface Contacts {
     userNumber : number | string
 }
 
-export const usersList : Contacts[] = [
+ const usersList : Contacts[] = [
     {
         name : "Osvaldo Victor",
         userNumber: 934521342,
@@ -127,3 +127,8 @@ export const usersList : Contacts[] = [
     }
 
 ]
+
+export {
+  Contacts,
+  usersList
+}
